@@ -1,0 +1,2492 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الدرس الثالث: الحياة السياسية والإدارية</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a1a;
+    --bg-secondary: #1a1035;
+    --bg-card: rgba(45, 27, 78, 0.6);
+    --bg-card-solid: #2d1b4e;
+    --text-primary: #f0f0f0;
+    --text-secondary: #c0b8d6;
+    --accent-1: #00d4aa;
+    --accent-2: #7c4dff;
+    --accent-3: #ff6b6b;
+    --accent-4: #ffd93d;
+    --accent-5: #6bcfff;
+    --border-color: rgba(124, 77, 255, 0.3);
+    --border-glow: rgba(0, 212, 170, 0.4);
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --card-blur: blur(10px);
+    --gradient-1: linear-gradient(135deg, #00706E, #211740);
+    --gradient-2: linear-gradient(135deg, #7c4dff, #00d4aa);
+    --gradient-title: linear-gradient(90deg, #00d4aa, #7c4dff, #ff6b6b, #ffd93d, #00d4aa);
+    --progress-bg: rgba(255,255,255,0.1);
+    --correct-bg: rgba(0, 212, 170, 0.15);
+    --correct-border: #00d4aa;
+    --wrong-bg: rgba(255, 107, 107, 0.15);
+    --wrong-border: #ff6b6b;
+    --particle-opacity: 0.6;
+    --table-header: rgba(124, 77, 255, 0.3);
+    --table-row: rgba(45, 27, 78, 0.3);
+    --table-row-alt: rgba(45, 27, 78, 0.5);
+    --tooltip-bg: rgba(0,0,0,0.8);
+    --scroll-btn-bg: rgba(124, 77, 255, 0.8);
+    --notification-bg: rgba(45, 27, 78, 0.95);
+    --quiz-option-bg: rgba(45, 27, 78, 0.4);
+    --quiz-option-hover: rgba(124, 77, 255, 0.2);
+    --quiz-option-border: rgba(124, 77, 255, 0.3);
+    --stat-card-bg: rgba(45, 27, 78, 0.5);
+    --info-card-bg: rgba(0, 212, 170, 0.08);
+    --info-card-border: rgba(0, 212, 170, 0.3);
+    --definition-bg: rgba(124, 77, 255, 0.08);
+    --definition-border: rgba(124, 77, 255, 0.4);
+    --quote-bg: rgba(255, 217, 61, 0.08);
+    --quote-border: rgba(255, 217, 61, 0.4);
+}
+
+body.light-mode {
+    --bg-primary: #f4f8ff;
+    --bg-secondary: #e9f1ff;
+    --bg-card: rgba(255, 255, 255, 0.9);
+    --bg-card-solid: #ffffff;
+    --text-primary: #1a1a2e;
+    --text-secondary: #4a4a6a;
+    --accent-1: #00897b;
+    --accent-2: #5c2dce;
+    --accent-3: #e53935;
+    --accent-4: #f9a825;
+    --accent-5: #0288d1;
+    --border-color: rgba(92, 45, 206, 0.2);
+    --border-glow: rgba(0, 137, 123, 0.3);
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --card-blur: blur(0px);
+    --gradient-1: linear-gradient(135deg, #e9f1ff, #f4f8ff);
+    --gradient-2: linear-gradient(135deg, #5c2dce, #00897b);
+    --gradient-title: linear-gradient(90deg, #00897b, #5c2dce, #e53935, #f9a825, #00897b);
+    --progress-bg: rgba(0,0,0,0.08);
+    --correct-bg: rgba(0, 137, 123, 0.1);
+    --correct-border: #00897b;
+    --wrong-bg: rgba(229, 57, 53, 0.1);
+    --wrong-border: #e53935;
+    --particle-opacity: 0.15;
+    --table-header: rgba(92, 45, 206, 0.15);
+    --table-row: rgba(233, 241, 255, 0.5);
+    --table-row-alt: rgba(233, 241, 255, 0.8);
+    --tooltip-bg: rgba(26,26,46,0.9);
+    --scroll-btn-bg: rgba(92, 45, 206, 0.85);
+    --notification-bg: rgba(255, 255, 255, 0.98);
+    --quiz-option-bg: rgba(233, 241, 255, 0.6);
+    --quiz-option-hover: rgba(92, 45, 206, 0.1);
+    --quiz-option-border: rgba(92, 45, 206, 0.2);
+    --stat-card-bg: rgba(233, 241, 255, 0.8);
+    --info-card-bg: rgba(0, 137, 123, 0.06);
+    --info-card-border: rgba(0, 137, 123, 0.25);
+    --definition-bg: rgba(92, 45, 206, 0.05);
+    --definition-border: rgba(92, 45, 206, 0.3);
+    --quote-bg: rgba(249, 168, 37, 0.06);
+    --quote-border: rgba(249, 168, 37, 0.35);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    transition: all 0.4s ease;
+    overflow-x: hidden;
+}
+
+/* Particles */
+#particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: var(--particle-opacity);
+    transition: opacity 0.4s ease;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    animation: floatParticle linear infinite;
+}
+
+@keyframes floatParticle {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-100px) rotate(720deg); opacity: 0; }
+}
+
+/* Progress Bar */
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: var(--gradient-2);
+    z-index: 10000;
+    transition: width 0.3s ease;
+    border-radius: 0 2px 2px 0;
+}
+
+/* Score Counter */
+#score-counter {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: var(--bg-card);
+    backdrop-filter: var(--card-blur);
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    padding: 8px 20px;
+    z-index: 9999;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--accent-1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.4s ease;
+    box-shadow: var(--shadow);
+}
+
+#score-counter .score-icon {
+    font-size: 18px;
+}
+
+/* Theme Toggle */
+#theme-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+    background: var(--bg-card);
+    backdrop-filter: var(--card-blur);
+    cursor: pointer;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    transition: all 0.4s ease;
+    box-shadow: var(--shadow);
+}
+
+#theme-toggle:hover {
+    transform: rotate(180deg) scale(1.1);
+    border-color: var(--accent-1);
+}
+
+#theme-toggle .tooltip {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: var(--tooltip-bg);
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+#theme-toggle:hover .tooltip {
+    opacity: 1;
+}
+
+/* Notification */
+#notification {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    background: var(--notification-bg);
+    border: 1px solid var(--border-color);
+    backdrop-filter: var(--card-blur);
+    border-radius: 12px;
+    padding: 12px 24px;
+    z-index: 10001;
+    font-size: 14px;
+    font-weight: 600;
+    transform: translateX(300px);
+    opacity: 0;
+    transition: all 0.4s ease;
+    box-shadow: var(--shadow);
+}
+
+#notification.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Scroll to Top */
+#scroll-top {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--scroll-btn-bg);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+#scroll-top:hover {
+    transform: translateY(-5px);
+    background: var(--accent-2);
+}
+
+/* Main Container */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 20px 40px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 60px 30px;
+    margin-bottom: 40px;
+    border-radius: 24px;
+    background: var(--bg-card);
+    backdrop-filter: var(--card-blur);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent, var(--accent-2), transparent, var(--accent-1), transparent);
+    animation: rotateGradient 8s linear infinite;
+    opacity: 0.05;
+}
+
+@keyframes rotateGradient {
+    100% { transform: rotate(360deg); }
+}
+
+.hero-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+    display: block;
+    animation: bounceIn 1s ease;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    font-weight: 900;
+    background: var(--gradient-title);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 4s ease infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.hero .subtitle {
+    font-size: 1.2em;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.hero .badge {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 6px 20px;
+    background: var(--gradient-2);
+    border-radius: 50px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* Sections */
+.section {
+    background: var(--bg-card);
+    backdrop-filter: var(--card-blur);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 35px 30px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.section-icon {
+    font-size: 40px;
+    flex-shrink: 0;
+}
+
+.section-title {
+    font-size: 1.6em;
+    font-weight: 800;
+    color: var(--accent-1);
+}
+
+.section-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: var(--gradient-2);
+    color: #fff;
+    font-weight: 800;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+/* Sub-headers */
+.sub-header {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: var(--accent-2);
+    margin: 25px 0 15px;
+    padding-right: 15px;
+    border-right: 4px solid var(--accent-2);
+}
+
+.sub-header-2 {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: var(--accent-5);
+    margin: 20px 0 10px;
+    padding-right: 12px;
+    border-right: 3px solid var(--accent-5);
+}
+
+/* Content */
+p {
+    margin-bottom: 12px;
+    color: var(--text-primary);
+    line-height: 2;
+}
+
+.highlight {
+    color: var(--accent-1);
+    font-weight: 700;
+}
+
+.highlight-2 {
+    color: var(--accent-2);
+    font-weight: 700;
+}
+
+.highlight-3 {
+    color: var(--accent-4);
+    font-weight: 700;
+}
+
+/* Lists */
+.content-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.content-list li {
+    padding: 10px 15px 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 12px;
+    background: var(--quiz-option-bg);
+    border-right: 4px solid var(--accent-1);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.content-list li:hover {
+    transform: translateX(-5px);
+    background: var(--quiz-option-hover);
+}
+
+.content-list li .list-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.numbered-list {
+    counter-reset: item;
+}
+
+.numbered-list li {
+    border-right-color: var(--accent-2);
+}
+
+.numbered-list li::before {
+    counter-increment: item;
+    content: counter(item);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--accent-2);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+/* Definition Cards */
+.definition-card {
+    background: var(--definition-bg);
+    border: 1px solid var(--definition-border);
+    border-radius: 16px;
+    padding: 20px;
+    margin: 15px 0;
+    transition: all 0.3s ease;
+}
+
+.definition-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(124, 77, 255, 0.15);
+}
+
+.definition-card .def-title {
+    font-weight: 800;
+    color: var(--accent-2);
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.definition-card .def-text {
+    color: var(--text-primary);
+    line-height: 1.9;
+}
+
+/* Info Cards */
+.info-card {
+    background: var(--info-card-bg);
+    border: 1px solid var(--info-card-border);
+    border-radius: 16px;
+    padding: 20px;
+    margin: 15px 0;
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-3px);
+}
+
+.info-card .info-title {
+    font-weight: 800;
+    color: var(--accent-1);
+    font-size: 1.05em;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Quote Cards */
+.quote-card {
+    background: var(--quote-bg);
+    border: 1px solid var(--quote-border);
+    border-radius: 16px;
+    padding: 20px 25px;
+    margin: 20px 0;
+    position: relative;
+    font-style: italic;
+}
+
+.quote-card::before {
+    content: '❝';
+    font-size: 40px;
+    color: var(--accent-4);
+    position: absolute;
+    top: -10px;
+    right: 15px;
+    opacity: 0.5;
+}
+
+.quote-card .quote-source {
+    display: block;
+    text-align: left;
+    font-weight: 700;
+    color: var(--accent-4);
+    margin-top: 10px;
+    font-style: normal;
+    font-size: 0.9em;
+}
+
+/* Stat Cards */
+.stat-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.stat-card {
+    background: var(--stat-card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-1);
+}
+
+.stat-card .stat-number {
+    font-size: 2em;
+    font-weight: 900;
+    color: var(--accent-1);
+    display: block;
+}
+
+.stat-card .stat-label {
+    font-size: 0.9em;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.stat-card .stat-icon {
+    font-size: 30px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Tables */
+.table-wrapper {
+    overflow-x: auto;
+    margin: 20px 0;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95em;
+}
+
+.comparison-table thead th {
+    background: var(--table-header);
+    color: var(--text-primary);
+    padding: 14px 18px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.comparison-table tbody td {
+    padding: 12px 18px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.comparison-table tbody tr:nth-child(odd) {
+    background: var(--table-row);
+}
+
+.comparison-table tbody tr:nth-child(even) {
+    background: var(--table-row-alt);
+}
+
+.comparison-table tbody tr:hover {
+    background: var(--quiz-option-hover);
+}
+
+/* Pyramid */
+.pyramid-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px 0;
+    gap: 4px;
+}
+
+.pyramid-level {
+    text-align: center;
+    padding: 10px;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+}
+
+.pyramid-level:hover {
+    transform: scale(1.05);
+}
+
+/* Quiz Section */
+.quiz-section {
+    background: var(--bg-card);
+    backdrop-filter: var(--card-blur);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 30px 0;
+    box-shadow: var(--shadow);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.quiz-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.quiz-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--accent-4);
+}
+
+.quiz-header h3 {
+    font-size: 1.4em;
+    font-weight: 800;
+    color: var(--accent-4);
+}
+
+.question {
+    background: var(--quiz-option-bg);
+    border: 1px solid var(--quiz-option-border);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.question.answered-correct {
+    background: var(--correct-bg);
+    border-color: var(--correct-border);
+}
+
+.question.answered-wrong {
+    background: var(--wrong-bg);
+    border-color: var(--wrong-border);
+}
+
+.question-text {
+    font-weight: 700;
+    font-size: 1.05em;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.question-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--accent-4);
+    color: #000;
+    font-size: 14px;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.options {
+    display: grid;
+    gap: 10px;
+}
+
+.option-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+    border: 2px solid var(--quiz-option-border);
+    border-radius: 12px;
+    background: var(--quiz-option-bg);
+    color: var(--text-primary);
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.95em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: right;
+    width: 100%;
+}
+
+.option-btn:hover:not(.disabled) {
+    background: var(--quiz-option-hover);
+    border-color: var(--accent-2);
+    transform: translateX(-5px);
+}
+
+.option-btn.correct {
+    background: var(--correct-bg) !important;
+    border-color: var(--correct-border) !important;
+    color: var(--correct-border) !important;
+}
+
+.option-btn.wrong {
+    background: var(--wrong-bg) !important;
+    border-color: var(--wrong-border) !important;
+    color: var(--wrong-border) !important;
+}
+
+.option-btn.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.option-letter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--accent-2);
+    color: #fff;
+    font-weight: 800;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.feedback {
+    margin-top: 12px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.95em;
+    display: none;
+}
+
+.feedback.correct-feedback {
+    background: var(--correct-bg);
+    color: var(--correct-border);
+    border: 1px solid var(--correct-border);
+    display: block;
+}
+
+.feedback.wrong-feedback {
+    background: var(--wrong-bg);
+    color: var(--wrong-border);
+    border: 1px solid var(--wrong-border);
+    display: block;
+}
+
+/* True/False */
+.tf-options {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.tf-btn {
+    flex: 1;
+    min-width: 120px;
+    padding: 12px 24px;
+    border: 2px solid var(--quiz-option-border);
+    border-radius: 12px;
+    background: var(--quiz-option-bg);
+    color: var(--text-primary);
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1em;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.tf-btn:hover:not(.disabled) {
+    background: var(--quiz-option-hover);
+    border-color: var(--accent-2);
+}
+
+.tf-btn.correct {
+    background: var(--correct-bg) !important;
+    border-color: var(--correct-border) !important;
+    color: var(--correct-border) !important;
+}
+
+.tf-btn.wrong {
+    background: var(--wrong-bg) !important;
+    border-color: var(--wrong-border) !important;
+    color: var(--wrong-border) !important;
+}
+
+/* Final Exam */
+.final-exam {
+    background: linear-gradient(135deg, var(--bg-card), var(--bg-card-solid));
+    border: 2px solid var(--accent-4);
+    border-radius: 24px;
+    padding: 40px 30px;
+    margin: 40px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.final-exam::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-2);
+}
+
+/* Results */
+.results-container {
+    text-align: center;
+    padding: 40px 20px;
+    display: none;
+}
+
+.results-circle {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 6px solid var(--accent-1);
+    position: relative;
+}
+
+.results-circle .percentage {
+    font-size: 2.5em;
+    font-weight: 900;
+    color: var(--accent-1);
+}
+
+.results-circle .label {
+    font-size: 0.9em;
+    color: var(--text-secondary);
+}
+
+.results-message {
+    font-size: 1.5em;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.results-details {
+    font-size: 1em;
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+}
+
+.reset-btn {
+    padding: 14px 40px;
+    border: none;
+    border-radius: 50px;
+    background: var(--gradient-2);
+    color: #fff;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(124, 77, 255, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 70px 12px 30px;
+    }
+    .hero {
+        padding: 40px 20px;
+    }
+    .hero h1 {
+        font-size: 1.7em;
+    }
+    .section {
+        padding: 25px 18px;
+    }
+    .section-title {
+        font-size: 1.3em;
+    }
+    .stat-cards {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    #score-counter {
+        top: 10px;
+        left: 10px;
+        padding: 6px 14px;
+        font-size: 12px;
+    }
+    #theme-toggle {
+        top: 10px;
+        right: 10px;
+        width: 42px;
+        height: 42px;
+        font-size: 20px;
+    }
+    .pyramid-level {
+        font-size: 0.75em;
+        padding: 8px;
+    }
+    .tf-options {
+        flex-direction: column;
+    }
+    .quiz-section {
+        padding: 20px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.4em;
+    }
+    .hero-icon {
+        font-size: 60px;
+    }
+    .stat-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body { background: #fff; color: #000; }
+    .quiz-section, #theme-toggle, #scroll-top, #score-counter, #particles-container, #progress-bar { display: none !important; }
+    .section { box-shadow: none; border: 1px solid #ddd; break-inside: avoid; opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body class="dark-mode">
+
+<!-- Particles -->
+<div id="particles-container"></div>
+
+<!-- Progress Bar -->
+<div id="progress-bar"></div>
+
+<!-- Score Counter -->
+<div id="score-counter">
+    <span class="score-icon">⭐</span>
+    <span>النقاط: <span id="score">0</span> / <span id="total-questions">0</span></span>
+</div>
+
+<!-- Theme Toggle -->
+<button id="theme-toggle" onclick="toggleTheme()">
+    <span id="theme-icon">🌙</span>
+    <span class="tooltip" id="theme-tooltip">التبديل للوضع النهاري</span>
+</button>
+
+<!-- Notification -->
+<div id="notification"></div>
+
+<!-- Scroll to Top -->
+<button id="scroll-top" onclick="scrollToTop()">⬆</button>
+
+<div class="container">
+
+    <!-- Hero -->
+    <div class="hero">
+        <span class="hero-icon">🏛️</span>
+        <h1>الدرس الثالث: الحياة السياسية والإدارية</h1>
+        <p class="subtitle">تاريخ مصر القديمة - الصف الأول الثانوي</p>
+        <span class="badge">📚 الفصل الدراسي 2024 - 2025</span>
+    </div>
+
+    <!-- تمهيد -->
+    <div class="section" data-section>
+        <div class="section-header">
+            <span class="section-icon">📜</span>
+            <h2 class="section-title">تمهيد</h2>
+        </div>
+        <p>أدرك المصريون القدماء منذ <span class="highlight">فجر التاريخ</span> أن أمنهم القومي يكمن في <span class="highlight-2">الوحدة السياسية</span> كأمة موحدة تسير وفق نظام ثابت.</p>
+        <p>وقد اقتضت طبيعة الحياة في مصر والتي تعتمد على <span class="highlight">النيل والزراعة</span> وجود تنظيم إداري وسلطة مركزية قوية، تمثلت في:</p>
+        <ul class="content-list">
+            <li><span class="list-icon">✅</span> تحقيق الوحدة السياسية</li>
+            <li><span class="list-icon">✅</span> نظام حكم قوي</li>
+            <li><span class="list-icon">✅</span> قضاء عادل</li>
+            <li><span class="list-icon">✅</span> جيش منظم قوي يحمي حدود البلاد</li>
+            <li><span class="list-icon">✅</span> شرطة تحافظ على الأمن الداخلي</li>
+        </ul>
+
+        <div class="info-card">
+            <div class="info-title">💡 بم تفسر: اهتمام المصريين القدماء بالوحدة السياسية؟</div>
+            <p>لأن طبيعة الحياة في مصر التي تعتمد على النيل والزراعة اقتضت وجود تنظيم إداري وسلطة مركزية قوية لتحقيق الأمن القومي وحماية البلاد.</p>
+        </div>
+    </div>
+
+    <!-- أولاً: الوحدة السياسية -->
+    <div class="section" data-section>
+        <div class="section-header">
+            <span class="section-number">1</span>
+            <span class="section-icon">🏴</span>
+            <h2 class="section-title">أولاً: الوحدة السياسية</h2>
+        </div>
+
+        <p>بعد أن استقر المصريون على ضفاف النيل أدركوا أن الطريق الوحيد <span class="highlight-2">لأمنهم القومي</span> وتكوين دولة قوية متقدمة يكمن في <span class="highlight">الوحدة السياسية للبلاد</span>.</p>
+
+        <h3 class="sub-header">مراحل تحقيق الوحدة السياسية</h3>
+        <ul class="content-list numbered-list">
+            <li>إنشاء القرى والمدن</li>
+            <li>تكوين الأقاليم</li>
+            <li>توحيد مصر عام <span class="highlight">4242 ق.م</span> لأول مرة على يد <span class="highlight-2">حكام الدلتا</span>، وكانت عاصمتها <span class="highlight">أون "هليوبوليس"</span>، ولكن سرعان ما فشلت الوحدة</li>
+            <li>انقسمت إلى مملكتين: <span class="highlight-3">مملكة الشمال</span> و <span class="highlight-3">مملكة الجنوب</span></li>
+        </ul>
+
+        <div class="stat-cards">
+            <div class="stat-card">
+                <span class="stat-icon">📅</span>
+                <span class="stat-number">4242 ق.م</span>
+                <span class="stat-label">أول توحيد لمصر (فشل)</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon">👑</span>
+                <span class="stat-number">3200 ق.م</span>
+                <span class="stat-label">الوحدة التاريخية على يد نعرمر (مينا)</span>
+            </div>
+        </div>
+
+        <div class="definition-card">
+            <div class="def-title">📌 الوحدة التاريخية</div>
+            <div class="def-text">قيام الوحدة التاريخية عام <strong>3200 ق.م</strong> على يد الملك <strong>نعرمر "مينا"</strong>، وبذلك كان المصريون القدماء من أوائل الشعوب التي عرفت الوحدة التاريخية والتي تحققت بعد ثمرة كفاح طويلة.</div>
+        </div>
+
+        <h3 class="sub-header">عوامل ساعدت على تحقيق الوحدة</h3>
+        <ul class="content-list numbered-list">
+            <li><span class="highlight-2">نهر النيل:</span> ربط بين القرى والمدن والأقاليم المختلفة</li>
+            <li><span class="highlight-2">انبساط أرض الوادي وامتدادها:</span> من الجنوب إلى الشمال ساعد على الاتصال والاختلاط</li>
+            <li><span class="highlight-2">خيرات مصر وخصوبة أرضها:</span> جعلت المصريين يتحدون لاستثمارها ومواجهة الطامعين فيها</li>
+        </ul>
+
+        <div class="info-card">
+            <div class="info-title">💡 عوامل أخرى</div>
+            <p>حب المصري القديم لوطنه كان من العوامل المهمة في تحقيق الوحدة السياسية.</p>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title">❓ بم تفسر: نجاح المصريين القدماء في تحقيق الوحدة السياسية؟</div>
+            <p>بسبب: نهر النيل الذي ربط بين أنحاء البلاد، وانبساط أرض الوادي، وخصوبة الأرض التي دفعتهم للتحد، وحب المصري القديم لوطنه.</p>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title">❓ بم تفسر: فشل أول وحدة لمصر عام 4242 ق.م؟</div>
+            <p>لأنها لم تكن وحدة قائمة على أسس قوية كافية، وسرعان ما انقسمت البلاد إلى مملكتين: مملكة الشمال ومملكة الجنوب.</p>
+        </div>
+
+        <!-- Table: المملكتين -->
+        <div class="table-wrapper">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>البيان</th>
+                        <th>مملكة الشمال 🔵</th>
+                        <th>مملكة الجنوب 🔴</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>الموقع</td>
+                        <td>الوجه البحري (الدلتا)</td>
+                        <td>الوجه القبلي (الصعيد)</td>
+                    </tr>
+                    <tr>
+                        <td>العاصمة</td>
+                        <td>أون (هليوبوليس)</td>
+                        <td>طيبة (الأقصر)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- أسئلة القسم الأول -->
+    <div class="quiz-section" data-section>
+        <div class="quiz-header">
+            <span style="font-size:30px">🎯</span>
+            <h3>أسئلة على الوحدة السياسية</h3>
+        </div>
+
+        <div class="question" id="q1">
+            <div class="question-text"><span class="question-number">1</span> تم توحيد مصر لأول مرة عام 4242 ق.م على يد:</div>
+            <div class="options">
+                <button class="option-btn" onclick="checkAnswer(this, 'q1', false)"><span class="option-letter">أ</span> الملك نعرمر (مينا)</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q1', true)"><span class="option-letter">ب</span> حكام الدلتا</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q1', false)"><span class="option-letter">ج</span> الملك بيبي الأول</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q1', false)"><span class="option-letter">د</span> الملك سنوسرت الثالث</button>
+            </div>
+            <div class="feedback" id="feedback-q1"></div>
+        </div>
+
+        <div class="question" id="q2">
+            <div class="question-text"><span class="question-number">2</span> كانت عاصمة مصر عند أول توحيد عام 4242 ق.م:</div>
+            <div class="options">
+                <button class="option-btn" onclick="checkAnswer(this, 'q2', false)"><span class="option-letter">أ</span> طيبة</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q2', false)"><span class="option-letter">ب</span> منف</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q2', true)"><span class="option-letter">ج</span> أون (هليوبوليس)</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q2', false)"><span class="option-letter">د</span> الإسكندرية</button>
+            </div>
+            <div class="feedback" id="feedback-q2"></div>
+        </div>
+
+        <div class="question" id="q3">
+            <div class="question-text"><span class="question-number">3</span> قامت الوحدة التاريخية عام 3200 ق.م على يد الملك:</div>
+            <div class="options">
+                <button class="option-btn" onclick="checkAnswer(this, 'q3', true)"><span class="option-letter">أ</span> نعرمر (مينا)</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q3', false)"><span class="option-letter">ب</span> سنفرو</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q3', false)"><span class="option-letter">ج</span> أحمس</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q3', false)"><span class="option-letter">د</span> رمسيس الثالث</button>
+            </div>
+            <div class="feedback" id="feedback-q3"></div>
+        </div>
+
+        <div class="question" id="q4">
+            <div class="question-text"><span class="question-number">4</span> صح أم خطأ: ربط نهر النيل بين القرى والمدن والأقاليم المختلفة مما ساعد على الوحدة.</div>
+            <div class="tf-options">
+                <button class="tf-btn" onclick="checkTF(this, 'q4', true)">✅ صح</button>
+                <button class="tf-btn" onclick="checkTF(this, 'q4', false)">❌ خطأ</button>
+            </div>
+            <div class="feedback" id="feedback-q4"></div>
+        </div>
+
+        <div class="question" id="q5">
+            <div class="question-text"><span class="question-number">5</span> صح أم خطأ: نجح توحيد مصر عام 4242 ق.م واستمر حتى عهد الملك مينا.</div>
+            <div class="tf-options">
+                <button class="tf-btn" onclick="checkTF(this, 'q5', false)">✅ صح</button>
+                <button class="tf-btn" onclick="checkTF(this, 'q5', true)">❌ خطأ</button>
+            </div>
+            <div class="feedback" id="feedback-q5"></div>
+        </div>
+    </div>
+
+    <!-- ثانياً: عناصر الحكم في مصر الفرعونية -->
+    <div class="section" data-section>
+        <div class="section-header">
+            <span class="section-number">2</span>
+            <span class="section-icon">⚖️</span>
+            <h2 class="section-title">ثانياً: عناصر الحكم في مصر الفرعونية</h2>
+        </div>
+
+        <h3 class="sub-header">هرم السلطة في مصر الفرعونية</h3>
+
+        <div class="pyramid-container">
+            <div class="pyramid-level" style="width:20%; background:linear-gradient(135deg,#ff9800,#f57c00);">👑 الملك</div>
+            <div class="pyramid-level" style="width:28%; background:linear-gradient(135deg,#ff7043,#e64a19);">📋 الوزير</div>
+            <div class="pyramid-level" style="width:36%; background:linear-gradient(135deg,#ab47bc,#7b1fa2);">🏛️ الإدارة المركزية</div>
+            <div class="pyramid-level" style="width:44%; background:linear-gradient(135deg,#5c6bc0,#303f9f);">🏘️ الإدارة المحلية</div>
+            <div class="pyramid-level" style="width:52%; background:linear-gradient(135deg,#42a5f5,#1565c0);">⚖️ القضاء</div>
+            <div class="pyramid-level" style="width:60%; background:linear-gradient(135deg,#66bb6a,#2e7d32);">⚔️ الجيش</div>
+            <div class="pyramid-level" style="width:68%; background:linear-gradient(135deg,#26c6da,#00838f);">⚓ الأسطول</div>
+            <div class="pyramid-level" style="width:76%; background:linear-gradient(135deg,#78909c,#37474f);">🛡️ الشرطة</div>
+        </div>
+    </div>
+
+    <!-- 1- الملك -->
+    <div class="section" data-section>
+        <div class="section-header">
+            <span class="section-number">1</span>
+            <span class="section-icon">👑</span>
+            <h2 class="section-title">الملك (الفرعون)</h2>
+        </div>
+
+        <div class="definition-card">
+            <div class="def-title">📌 الملكية المقدسة</div>
+            <div class="def-text">اعتنق المصريون القدماء فكرة <strong>الملكية المقدسة</strong> لأن الفرعون كان في نظرهم إلهاً على الأرض يدير شؤون البلاد، وتتركز في يده كل السلطات.</div>
+        </div>
+
+        <p>كان الملك يجمع في يده كل <span class="highlight">السلطات الدينية والدنيوية</span> التي تمكنه من القيام بمهام عديدة.</p>
+
+        <h3 class="sub-header">مهام الملك (الفرعون)</h3>
+
+        <div class="table-wrapper">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>المهمة</th>
+                        <th>التفاصيل</th>
+                        <th>نوع السلطة</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>إدارة السياسة الداخلية</td>
+                        <td>تعيين الوزراء وكبار الموظفين، الإشراف على المشروعات</td>
+                        <td>سلطة تنفيذية</td>
+                    </tr>
+                    <tr>
+                        <td>إدارة السياسة الخارجية</td>
+                        <td>إعلان الحرب وقيادة الجيش، وعقد المعاهدات</td>
+                        <td>سلطة تنفيذية</td>
+                    </tr>
+                    <tr>
+                        <td>إصدار القوانين</td>
+                        <td>الحق في إصدار المراسيم والقوانين</td>
+                        <td>سلطة تشريعية</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title">💡 ما المقصود بـ "الملكية المقدسة"؟</div>
+            <p>هي فكرة اعتنقها المصريون القدماء ومفادها أن الفرعون إله على الأرض يدير شؤون البلاد وتتركز في يده كل السلطات الدينية والدنيوية.</p>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title">❓ بم تفسر: تركز السلطات في يد الفرعون؟</div>
+            <p>لأن المصريين القدماء اعتنقوا فكرة الملكية المقدسة، فكان الفرعون في نظرهم إلهاً على الأرض، مما جعله يجمع كل السلطات الدينية والدنيوية.</p>
+        </div>
+    </div>
+
+    <!-- 2- الوزير -->
+    <div class="section" data-section>
+        <div class="section-header">
+            <span class="section-number">2</span>
+            <span class="section-icon">📋</span>
+            <h2 class="section-title">الوزير</h2>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title">📌 ملاحظة مهمة</div>
+            <p>تقديم أهل الكفاءة على أهل الثقة يحقق مبدأ <strong>تكافؤ الفرص</strong> بين أبناء الوطن.</p>
+        </div>
+
+        <h3 class="sub-header">الوزير في عصر الدولة القديمة</h3>
+        <p>ظهر منصب الوزير وكان <span class="highlight-2">محصوراً في أسرة الملك</span> لأنهم أهل للثقة، ثم أصبح من يشغلونه من بين أصحاب <span class="highlight">الكفاءة والعلم ورجاحة العقل</span>.</p>
+
+        <h3 class="sub-header">الوزير في عصر الدولة الحديثة</h3>
+        <p>كان هناك <span class="highlight">وزيران</span>:</p>
+        <ul class="content-list">
+            <li><span class="list-icon">📍</span> وزير يُقيم في <span class="highlight-2">طيبة</span> ويشرف على الوجه القبلي</li>
+            <li><span class="list-icon">📍</span> وزير يُقيم في <span class="highlight-2">منف</span> ويشرف على الوجه البحري ومصر الوسطى</li>
+        </ul>
+
+        <h3 class="sub-header">من أشهر الوزراء</h3>
+        <ul class="content-list">
+            <li><span class="list-icon">⭐</span> الوزير <span class="highlight">إيمحوتب</span> في عصر الدولة القديمة</li>
+            <li><span class="list-icon">⭐</span> الوزير <span class="highlight">رخميرع</span> في عصر الدولة الحديثة</li>
+        </ul>
+
+        <h3 class="sub-header">أهم مهام الوزير</h3>
+        <div class="table-wrapper">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>المهمة</th>
+                        <th>نوع السلطة</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>يساعد الفرعون في إدارة وتنظيم شؤون الدولة</td>
+                        <td>سلطة تنفيذية</td>
+                    </tr>
+                    <tr>
+                        <td>يرأس الإدارة المركزية</td>
+                        <td>سلطة تنفيذية</td>
+                    </tr>
+                    <tr>
+                        <td>يرأس المحكمة العليا ويُعد كبير القضاة</td>
+                        <td>سلطة قضائية</td>
+                    </tr>
+                    <tr>
+                        <td>يسن بعض القوانين بتفويض من الملك</td>
+                        <td>سلطة تشريعية</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>كان الملك يوجه إلى الوزير <span class="highlight-2">خطاب التكليف</span> برئاسة الحكومة الذي يتضمن مهامه وما يجب تحقيقه.</p>
+
+        <div class="quote-card">
+            «الوزارة ليست حلوة المذاق بل إنها مرة.. وليس الغرض منها أن يتخذ بها الوزير لنفسه عبيداً من الشعب. فنجاح الرجل هو أن يعمل حسبما يقال له، وألا يتوانى في إقامة العدل.. والناس تنتظر العدل في كل تصرفات الوزير، لا تنسَ أن تحكم بالعدل لأن التحيز يعد طغياناً على الإله، عامِل من تعرفه معاملة من لا تعرفه، والمقرب من الملك كالبعيد عنه، وأعلم أن الأمير الذي يعمل ذلك سيستمر هنا في هذا المكان أياً كان شأنه في الدولة».
+            <span class="quote-source">— من نص خطاب تنصيب الوزير</span>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title">❓ بم تفسر: اختيار الوزير رخميرع في مصر الفرعونية؟</div>
+            <p>نتيجة كفاءته في تصريف الأمور، وليس بسبب انتمائه للأسرة الحاكمة.</p>
+        </div>
+    </div>
+
+    <!-- أسئلة القسم الثاني (الملك والوزير) -->
+    <div class="quiz-section" data-section>
+        <div class="quiz-header">
+            <span style="font-size:30px">🎯</span>
+            <h3>أسئلة على الملك والوزير</h3>
+        </div>
+
+        <div class="question" id="q6">
+            <div class="question-text"><span class="question-number">1</span> مَثَّل أعلى سلطة دينية في مصر القديمة:</div>
+            <div class="options">
+                <button class="option-btn" onclick="checkAnswer(this, 'q6', true)"><span class="option-letter">أ</span> الفرعون</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q6', false)"><span class="option-letter">ب</span> الكهنة</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q6', false)"><span class="option-letter">ج</span> الوزير</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q6', false)"><span class="option-letter">د</span> حكام الأقاليم</button>
+            </div>
+            <div class="feedback" id="feedback-q6"></div>
+        </div>
+
+        <div class="question" id="q7">
+            <div class="question-text"><span class="question-number">2</span> السلطة التي تمنح الفرعون الحق في إصدار المراسيم والقوانين هي:</div>
+            <div class="options">
+                <button class="option-btn" onclick="checkAnswer(this, 'q7', false)"><span class="option-letter">أ</span> القضائية</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q7', false)"><span class="option-letter">ب</span> التنفيذية</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q7', false)"><span class="option-letter">ج</span> العسكرية</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q7', true)"><span class="option-letter">د</span> التشريعية</button>
+            </div>
+            <div class="feedback" id="feedback-q7"></div>
+        </div>
+
+        <div class="question" id="q8">
+            <div class="question-text"><span class="question-number">3</span> مهمة الوزير المرتبطة بالسلطة التشريعية هي:</div>
+            <div class="options">
+                <button class="option-btn" onclick="checkAnswer(this, 'q8', false)"><span class="option-letter">أ</span> رئاسة الإدارة المركزية</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q8', false)"><span class="option-letter">ب</span> مساعدة الفرعون في إدارة الدولة</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q8', false)"><span class="option-letter">ج</span> رئاسته للمحكمة العليا في البلاد</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q8', true)"><span class="option-letter">د</span> تفويض الملك له بسن بعض القوانين</button>
+            </div>
+            <div class="feedback" id="feedback-q8"></div>
+        </div>
+
+        <div class="question" id="q9">
+            <div class="question-text"><span class="question-number">4</span> صح أم خطأ: كان إيمحوتب وزيراً للملك زوسر أحد ملوك الأسرة الثالثة.</div>
+            <div class="tf-options">
+                <button class="tf-btn" onclick="checkTF(this, 'q9', true)">✅ صح</button>
+                <button class="tf-btn" onclick="checkTF(this, 'q9', false)">❌ خطأ</button>
+            </div>
+            <div class="feedback" id="feedback-q9"></div>
+        </div>
+
+        <div class="question" id="q10">
+            <div class="question-text"><span class="question-number">5</span> مثّل حلقة الوصل بين الفرعون والجهاز الإداري بالدولة على اختلاف مستوياته:</div>
+            <div class="options">
+                <button class="option-btn" onclick="checkAnswer(this, 'q10', true)"><span class="option-letter">أ</span> الوزير</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q10', false)"><span class="option-letter">ب</span> حاكم الإقليم</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q10', false)"><span class="option-letter">ج</span> الكاتب</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q10', false)"><span class="option-letter">د</span> الكاهن</button>
+            </div>
+            <div class="feedback" id="feedback-q10"></div>
+        </div>
+    </div>
+
+    <!-- 3- الإدارة المركزية -->
+    <div class="section" data-section>
+        <div class="section-header">
+            <span class="section-number">3</span>
+            <span class="section-icon">🏛️</span>
+            <h2 class="section-title">الإدارة المركزية</h2>
+        </div>
+
+        <p>كان يرأسها <span class="highlight">الوزير</span>، وتكونت من:</p>
+
+        <h3 class="sub-header">مجلس العشرة الكبار</h3>
+        <ul class="content-list numbered-list">
+            <li><span class="highlight-2">يختاره</span> الملك ويرأسه الوزير</li>
+            <li><span class="highlight-2">يتكون من:</span> كبار موظفي الدولة، بعض رؤساء الدواوين، بعض حكام الأقاليم</li>
+            <li><span class="highlight-2">مهامه:</span> الإشراف الكامل على كل مرافق الدولة</li>
+        </ul>
+
+        <h3 class="sub-header">كاتمو أسرار الملك</h3>
+        <p>معاونون شخصيون للملك ويختارهم الملك بعناية.</p>
+
+        <h3 class="sub-header">دواوين الحكومة</h3>
+        <p>هي الإدارات العامة ولكل إدارة رئيس، ومنها:</p>
+        <ul class="content-list">
+            <li><span class="list-icon">🏦</span> الخزانة العامة</li>
+            <li><span class="list-icon">🌾</span> مخازن الغلال</li>
+            <li><span class="list-icon">📁</span> السجلات والمحفوظات</li>
+            <li><span class="list-icon">🌿</span> الزراعة، الأشغال، القضاء، الصناعة</li>
+        </ul>
+        <p>كان يوجد داخل الإدارات عدد كبير من <span class="highlight">الموظفين والكتبة</span>.</p>
+
+        <div class="quote-card">
+            كانت الوظائف الكتابية في مصر الفرعونية أحسن وسيلة يضمن بها الشاب المصري تحقيق مستقبل مشرق له.
+            <span class="quote-source">— حقيقة تاريخية</span>
+        </div>
+    </div>
+
+    <!-- 4- الإدارة المحلية -->
+    <div class="section" data-section>
+        <div class="section-header">
+            <span class="section-number">4</span>
+            <span class="section-icon">🏘️</span>
+            <h2 class="section-title">الإدارة المحلية (حكام الأقاليم)</h2>
+        </div>
+
+        <p>كانت مصر مقسمة إلى:</p>
+
+        <div class="stat-cards">
+            <div class="stat-card">
+                <span class="stat-icon">🗺️</span>
+                <span class="stat-number">42</span>
+                <span class="stat-label">إقليم</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon">🏙️</span>
+                <span class="stat-number">عدة</span>
+                <span class="stat-label">مراكز في كل إقليم</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon">🏡</span>
+                <span class="stat-number">عدة</span>
+                <span class="stat-label">مدن وقرى في كل مركز</span>
+            </div>
+        </div>
+
+        <ul class="content-list">
+            <li><span class="list-icon">👤</span> كان يرأس كل إقليم <span class="highlight-2">حاكم يعينه الملك</span> ويشرف عليه الوزير</li>
+            <li><span class="list-icon">📜</span> كان منصب حاكم الإقليم في بعض الأحيان <span class="highlight-3">وراثياً</span></li>
+        </ul>
+
+        <div class="info-card" style="border-color: var(--accent-3);">
+            <div class="info-title" style="color: var(--accent-3);">⚠️ مشكلة حكام الأقاليم</div>
+            <p>تمتع حكام الأقاليم في فترات الضعف بنفوذ واسع واستقل بعضهم عن الدولة، ومثل هذا <span class="highlight-3">تهديداً للسلطة المركزية</span>.</p>
+        </div>
+
+        <h3 class="sub-header">جهود الدولة للسيطرة على حكام الأقاليم</h3>
+        <p>سعت الدولة في فترات القوة للسيطرة على حكام الأقاليم، ومثال ذلك:</p>
+
+        <div class="definition-card">
+            <div class="def-title">📌 إصلاحات الملك سنوسرت الثالث</div>
+            <div class="def-text">
+                قام بتنظيم إدارة الأقاليم للقضاء على نفوذ حكام الأقاليم حيث:<br>
+                ✅ ألغى توريث منصب حاكم الإقليم<br>
+                ✅ أنشأ نظاماً جعل الأقاليم خاضعة لسلطته
+            </div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title">❓ بم تفسر: قيام الملك سنوسرت الثالث بتنظيم إدارة الأقاليم؟</div>
+            <p>للقضاء على نفوذ حكام الأقاليم الذين تمتعوا بنفوذ واسع في فترات الضعف واستقل بعضهم عن الدولة، مما شكل تهديداً للسلطة المركزية.</p>
+        </div>
+    </div>
+
+    <!-- أسئلة الإدارة المركزية والمحلية -->
+    <div class="quiz-section" data-section>
+        <div class="quiz-header">
+            <span style="font-size:30px">🎯</span>
+            <h3>أسئلة على الإدارة المركزية والمحلية</h3>
+        </div>
+
+        <div class="question" id="q11">
+            <div class="question-text"><span class="question-number">1</span> تعيين فرعون لكبار الموظفين والإشراف على المشروعات يدل على:</div>
+            <div class="options">
+                <button class="option-btn" onclick="checkAnswer(this, 'q11', true)"><span class="option-letter">أ</span> السيطرة على الجهاز الإداري</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q11', false)"><span class="option-letter">ب</span> امتلاك السلطة التشريعية</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q11', false)"><span class="option-letter">ج</span> الفصل بين السلطات</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q11', false)"><span class="option-letter">د</span> إرساء قيم الديموقراطية</button>
+            </div>
+            <div class="feedback" id="feedback-q11"></div>
+        </div>
+
+        <div class="question" id="q12">
+            <div class="question-text"><span class="question-number">2</span> كان عدد الأقاليم في مصر الفرعونية:</div>
+            <div class="options">
+                <button class="option-btn" onclick="checkAnswer(this, 'q12', false)"><span class="option-letter">أ</span> 32 إقليماً</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q12', true)"><span class="option-letter">ب</span> 42 إقليماً</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q12', false)"><span class="option-letter">ج</span> 22 إقليماً</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q12', false)"><span class="option-letter">د</span> 52 إقليماً</button>
+            </div>
+            <div class="feedback" id="feedback-q12"></div>
+        </div>
+
+        <div class="question" id="q13">
+            <div class="question-text"><span class="question-number">3</span> تشابه أعضاء مجلس العشرة الكبار وكاتمو أسرار الملك في:</div>
+            <div class="options">
+                <button class="option-btn" onclick="checkAnswer(this, 'q13', true)"><span class="option-letter">أ</span> طريقة تعيينهم</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q13', false)"><span class="option-letter">ب</span> السلطة الممنوحة لهم</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q13', false)"><span class="option-letter">ج</span> مكانتهم عند الملك</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q13', false)"><span class="option-letter">د</span> الوظائف التي كانوا يشغلونها</button>
+            </div>
+            <div class="feedback" id="feedback-q13"></div>
+        </div>
+
+        <div class="question" id="q14">
+            <div class="question-text"><span class="question-number">4</span> صح أم خطأ: ألغى الملك سنوسرت الثالث توريث منصب حاكم الإقليم.</div>
+            <div class="tf-options">
+                <button class="tf-btn" onclick="checkTF(this, 'q14', true)">✅ صح</button>
+                <button class="tf-btn" onclick="checkTF(this, 'q14', false)">❌ خطأ</button>
+            </div>
+            <div class="feedback" id="feedback-q14"></div>
+        </div>
+
+        <div class="question" id="q15">
+            <div class="question-text"><span class="question-number">5</span> تعددت الدواوين الحكومية في مصر الفرعونية وغلب عليها الطابع:</div>
+            <div class="options">
+                <button class="option-btn" onclick="checkAnswer(this, 'q15', false)"><span class="option-letter">أ</span> السياسي</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q15', true)"><span class="option-letter">ب</span> الاقتصادي</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q15', false)"><span class="option-letter">ج</span> القضائي</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q15', false)"><span class="option-letter">د</span> العسكري</button>
+            </div>
+            <div class="feedback" id="feedback-q15"></div>
+        </div>
+    </div>
+
+    <!-- العلاقة بين الحكام والشعب -->
+    <div class="section" data-section>
+        <div class="section-header">
+            <span class="section-icon">🤝</span>
+            <h2 class="section-title">العلاقة بين الحكام والشعب</h2>
+        </div>
+
+        <p>كان للملك هيبة كبيرة وسلطة مطلقة ولكن هذه النظرة بدأت تتغير مع <span class="highlight-3">أواخر عصر الدولة القديمة</span> نتيجة للظلم والاضطهاد والذي نتج عنها قيام <span class="highlight">أول ثورة اجتماعية في التاريخ</span>.</p>
+
+        <h3 class="sub-header">الثورة الاجتماعية «ثورة الشعب»</h3>
+
+        <h4 class="sub-header-2">قيامها</h4>
+        <p>قامت في أواخر <span class="highlight-2">الأسرة السادسة</span> في عهد الملك <span class="highlight">بيبي الثاني</span>.</p>
+
+        <h4 class="sub-header-2">أسبابها</h4>
+        <p>تنوعت ما بين سياسية واقتصادية واجتماعية، وتمثلت في:</p>
+        <ul class="content-list numbered-list">
+            <li>ضعف سلطة الملك بيبي الثاني</li>
+            <li>زيادة نفوذ حكام الأقاليم والكهنة واستغلالهم لموارد البلاد</li>
+            <li>عدم الاهتمام بأمور الرعية وكثرة المظالم</li>
+        </ul>
+
+        <h4 class="sub-header-2">أحداثها</h4>
+        <ul class="content-list">
+            <li><span class="list-icon">🔥</span> فاض الكيل بالشعب فخرج في ثورة عارمة ضد نظام الحكم مطالباً بالعدالة الاجتماعية</li>
+            <li><span class="list-icon">🔥</span> خرجت الثورة من مدينة منف ثم اشتعلت في مصر كلها، رافضاً كل ما في المجتمع من ظلم وفساد</li>
+            <li><span class="list-icon">🔥</span> واستمرت البلاد في حالة من الفوضى فترة من الزمن</li>
+        </ul>
+
+        <h4 class="sub-header-2">نتائجها</h4>
+        <p>خرجت مصر من محنتها أكثر قوة حيث:</p>
+        <ul class="content-list numbered-list">
+            <li>تحول نظام الحكم من <span class="highlight-3">ملكية مطلقة</span> إلى <span class="highlight">ملكية مقيدة</span> يلتزم فيه الفرعون بما يصدره من قوانين</li>
+            <li>رفعت الثورة من قيمة الفرد وانتشرت فكرة <span class="highlight-2">المساواة</span></li>
+            <li>ظهرت طبقة لم تعتز بحسبها ونسبها ومكانتها بقدر اعتمادها على قدراتها العقلية والمادية وبقدر اعتزازها بنفسها</li>
+            <li>نظر المصريون إلى الملك باعتباره <span class="highlight">حاكماً يجب أن يرعى مصالحهم</span> ويعبر عن طموحاتهم وأمالهم</li>
+        </ul>
+
+        <div class="info-card">
+            <div class="info-title">📌 نتيجة مهمة</div>
+            <p>بذلك تغيرت العلاقة بين الحكام والشعب، وبدأ الملوك والوزراء وحكام الأقاليم يتفاخرون بعدالتهم بين الناس ورعايتهم.</p>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title">❓ ما النتائج المترتبة على: الثورة الاجتماعية في أواخر عصر الدولة القديمة؟</div>
+            <p>1- تحول نظام الحكم من ملكية مطلقة إلى ملكية مقيدة. 2- رفعت قيمة الفرد وانتشرت فكرة المساواة. 3- ظهرت طبقة تعتمد على قدراتها الذاتية. 4- أصبح الملك حاكماً يرعى مصالح الشعب.</p>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title">❓ بم تفسر: قيام أول ثورة اجتماعية في التاريخ؟</div>
+            <p>بسبب ضعف سلطة الملك بيبي الثاني، وزيادة نفوذ حكام الأقاليم والكهنة واستغلالهم لموارد البلاد، وعدم الاهتمام بأمور الرعية وكثرة المظالم.</p>
+        </div>
+    </div>
+
+    <!-- أسئلة الثورة الاجتماعية -->
+    <div class="quiz-section" data-section>
+        <div class="quiz-header">
+            <span style="font-size:30px">🎯</span>
+            <h3>أسئلة على العلاقة بين الحكام والشعب</h3>
+        </div>
+
+        <div class="question" id="q16">
+            <div class="question-text"><span class="question-number">1</span> قامت الثورة الاجتماعية في عهد:</div>
+            <div class="options">
+                <button class="option-btn" onclick="checkAnswer(this, 'q16', false)"><span class="option-letter">أ</span> الملك بيبي الأول</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q16', true)"><span class="option-letter">ب</span> الملك بيبي الثاني</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q16', false)"><span class="option-letter">ج</span> الملك سنوسرت الثالث</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q16', false)"><span class="option-letter">د</span> الملك أحمس</button>
+            </div>
+            <div class="feedback" id="feedback-q16"></div>
+        </div>
+
+        <div class="question" id="q17">
+            <div class="question-text"><span class="question-number">2</span> من نتائج الثورة الاجتماعية تحول نظام الحكم إلى:</div>
+            <div class="options">
+                <button class="option-btn" onclick="checkAnswer(this, 'q17', false)"><span class="option-letter">أ</span> ملكية مطلقة</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q17', true)"><span class="option-letter">ب</span> ملكية مقيدة</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q17', false)"><span class="option-letter">ج</span> جمهورية</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q17', false)"><span class="option-letter">د</span> حكم كهنة</button>
+            </div>
+            <div class="feedback" id="feedback-q17"></div>
+        </div>
+
+        <div class="question" id="q18">
+            <div class="question-text"><span class="question-number">3</span> خرجت الثورة الاجتماعية من مدينة:</div>
+            <div class="options">
+                <button class="option-btn" onclick="checkAnswer(this, 'q18', false)"><span class="option-letter">أ</span> طيبة</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q18', true)"><span class="option-letter">ب</span> منف</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q18', false)"><span class="option-letter">ج</span> أون</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q18', false)"><span class="option-letter">د</span> الإسكندرية</button>
+            </div>
+            <div class="feedback" id="feedback-q18"></div>
+        </div>
+
+        <div class="question" id="q19">
+            <div class="question-text"><span class="question-number">4</span> صح أم خطأ: اقتصر إصدار القوانين في مصر الفرعونية على فرد واحد خلال عصر الدولة القديمة.</div>
+            <div class="tf-options">
+                <button class="tf-btn" onclick="checkTF(this, 'q19', true)">✅ صح</button>
+                <button class="tf-btn" onclick="checkTF(this, 'q19', false)">❌ خطأ</button>
+            </div>
+            <div class="feedback" id="feedback-q19"></div>
+        </div>
+
+        <div class="question" id="q20">
+            <div class="question-text"><span class="question-number">5</span> صح أم خطأ: لم تغير الثورة الاجتماعية من نظرة الشعب للملك.</div>
+            <div class="tf-options">
+                <button class="tf-btn" onclick="checkTF(this, 'q20', false)">✅ صح</button>
+                <button class="tf-btn" onclick="checkTF(this, 'q20', true)">❌ خطأ</button>
+            </div>
+            <div class="feedback" id="feedback-q20"></div>
+        </div>
+    </div>
+
+    <!-- 5- القضاء -->
+    <div class="section" data-section>
+        <div class="section-header">
+            <span class="section-number">5</span>
+            <span class="section-icon">⚖️</span>
+            <h2 class="section-title">القضاء</h2>
+        </div>
+
+        <div class="definition-card">
+            <div class="def-title">📌 القضاء</div>
+            <div class="def-text">يمثل <strong>السلطة الثانية</strong> في مصر الفرعونية.</div>
+        </div>
+
+        <ul class="content-list">
+            <li><span class="list-icon">⚖️</span> كان هناك محكمتان: إحداهما في <span class="highlight-2">الجنوب</span> والأخرى في <span class="highlight-2">الشمال</span> بالإضافة إلى محاكم الأقاليم</li>
+            <li><span class="list-icon">📋</span> كانت المحاكمات تسير طبقاً <span class="highlight">للإجراءات القانونية واحترام القانون</span></li>
+        </ul>
+    </div>
+
+    <!-- 6- الجيش -->
+    <div class="section" data-section>
+        <div class="section-header">
+            <span class="section-number">6</span>
+            <span class="section-icon">⚔️</span>
+            <h2 class="section-title">الجيش</h2>
+        </div>
+
+        <p>كان المصري القديم يميل <span class="highlight">للسلام</span> ولا يميل للحرب ولا يلجأ إليها إلا دفاعاً عن نفسه وبلاده، وذلك لأنه:</p>
+        <ul class="content-list">
+            <li><span class="list-icon">🌾</span> صاحب حضارة زراعية مستقرة فقد منحه النيل قدراً كبيراً من الأمن والاستقرار</li>
+            <li><span class="list-icon">🏗️</span> ظل فترة طويلة يبني بلاده من الداخل</li>
+        </ul>
+
+        <h3 class="sub-header">نشأة وتطور الجيش المصري</h3>
+
+        <div class="table-wrapper">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>المرحلة</th>
+                        <th>التفاصيل</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>البداية</td>
+                        <td>لم تعرف مصر جيشاً موحداً بل عرفت فرقاً عسكرية تدافع عن الأقاليم والعاصمة</td>
+                    </tr>
+                    <tr>
+                        <td>الأسرة السادسة</td>
+                        <td>ظهرت بواكير جيش نظامي خاصة في عهد الملك بيبي الأول بقيادة القائد وني، وخاض أول معركة حقيقية ضد القبائل التي تسكن فلسطين</td>
+                    </tr>
+                    <tr>
+                        <td>الدولة الحديثة</td>
+                        <td>ظهر أول جيش نظامي بعد طرد الهكسوس، واستطاع تكوين إمبراطورية مصرية بفرق مجهزة بالأسلحة</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="sub-header">أسلحة الجيش المصري</h3>
+        <div class="stat-cards">
+            <div class="stat-card"><span class="stat-icon">🏹</span><span class="stat-label">الأقواس</span></div>
+            <div class="stat-card"><span class="stat-icon">🗡️</span><span class="stat-label">السيوف</span></div>
+            <div class="stat-card"><span class="stat-icon">🔱</span><span class="stat-label">الرماح</span></div>
+            <div class="stat-card"><span class="stat-icon">🛡️</span><span class="stat-label">الدروع</span></div>
+            <div class="stat-card"><span class="stat-icon">⚔️</span><span class="stat-label">الحراب</span></div>
+            <div class="stat-card"><span class="stat-icon">🐴</span><span class="stat-label">العجلات الحربية (سلاح الفرسان)</span></div>
+        </div>
+
+        <h3 class="sub-header">أخلاق الجيش المصري</h3>
+        <ul class="content-list">
+            <li><span class="list-icon">⚔️</span> كان الجيش يقاتل بضراوة في مواجهة جيوش الأعداء</li>
+            <li><span class="list-icon">🤝</span> كان يتعامل بكل تحضر مع المدنيين والمنشآت المدنية، مدركاً أن قوته ليست فقط في عسكريته بل في سلوكه أيضاً</li>
+        </ul>
+
+        <div class="quote-card">
+            يعبر وني قائد الجيش المصري في عهد الملك بيبي الأول عن تعامل الجيش مع المدنيين: «من الأعداء لم يشاجر أحداً منهم ولم يأخذ خبز أي مدينة ولم يستولِ أحد منهم من أي شخص على عنزة واحدة».
+            <span class="quote-source">— وني قائد الجيش المصري</span>
+        </div>
+
+        <h3 class="sub-header">صفحات مضيئة في تاريخ الجيش المصري</h3>
+
+        <!-- معركة التحرير -->
+        <div class="definition-card">
+            <div class="def-title">⚔️ معركة التحرير 1571 ق.م</div>
+            <div class="def-text">
+                <strong>أطرافها:</strong> المصريون بقيادة <strong>أحمس أمير طيبة</strong> ضد الهكسوس<br><br>
+                <strong>أسبابها:</strong><br>
+                1️⃣ احتلال الهكسوس مصر عام 1730 ق.م<br>
+                2️⃣ إساءة معاملة الهكسوس للمصريين وإهانة معابدهم<br>
+                3️⃣ لم يطمئن المصريون للهكسوس ونظروا إليهم نظرة كره واحتقار<br>
+                4️⃣ قاوموهم تحت قيادة أمراء طيبة لاسترداد حريتهم<br><br>
+                <strong>نتائجها:</strong> هزيمة الهكسوس وطردهم خارج البلاد<br><br>
+                <em>ملاحظة: قاد أحمس معركة التحرير ولم يكمل العشرين من عمره!</em>
+            </div>
+        </div>
+
+        <!-- معركة مجدو -->
+        <div class="definition-card">
+            <div class="def-title">⚔️ معركة مجدو 1479 ق.م</div>
+            <div class="def-text">
+                <strong>أطرافها:</strong> الملك <strong>تحتمس الثالث</strong> ضد أمراء آسيا بزعامة أمير قادش بسوريا<br><br>
+                <strong>أسبابها:</strong> خروج أمراء آسيا على الحكم المصري بعد تولي تحتمس الثالث عرش البلاد، وتكوينهم حلفاً سورياً بقيادة أمير قادش، ورأى تحتمس الثالث خطورة ذلك على استقرار الأمن القومي المصري في آسيا<br><br>
+                <strong>نتائجها:</strong><br>
+                1️⃣ انتصار الجيش المصري<br>
+                2️⃣ تأمين حدود مصر الشمالية الشرقية<br>
+                3️⃣ تدعيم النفوذ المصري في آسيا<br>
+                4️⃣ إنشاء روابط اجتماعية وثقافية مع بلاد آسيا
+            </div>
+        </div>
+    </div>
+
+    <!-- 7- الأسطول -->
+    <div class="section" data-section>
+        <div class="section-header">
+            <span class="section-number">7</span>
+            <span class="section-icon">⚓</span>
+            <h2 class="section-title">الأسطول</h2>
+        </div>
+
+        <h3 class="sub-header">في عصر الدولة القديمة</h3>
+        <p>عرف المصريون الأساطيل البحرية، فقد أرسل الملك <span class="highlight">سنفرو</span> أسطولاً بحرياً إلى <span class="highlight-2">فينيقيا</span> لجلب خشب الأرز.</p>
+
+        <h3 class="sub-header">في عصر الدولة الحديثة</h3>
+        <p>كان يُعتبر <span class="highlight">العصر الذهبي</span> للبحرية المصرية بسبب:</p>
+        <ul class="content-list numbered-list">
+            <li>كثرة بناء واستخدام الأساطيل المختلفة</li>
+            <li>توسع الدولة المصرية في بناء ترسانات السفن على سواحل البحر المتوسط والبحر الأحمر وضفاف نهر النيل</li>
+        </ul>
+
+        <h3 class="sub-header">المعركة البحرية بين رمسيس الثالث وشعوب البحر المتوسط</h3>
+        <div class="definition-card">
+            <div class="def-title">⚓ المعركة البحرية</div>
+            <div class="def-text">
+                <strong>أسبابها:</strong> زحف شعوب البحر المتوسط نحو مصر وتهديد حدودها براً وبحراً<br><br>
+                <strong>أحداثها:</strong> اتجه رمسيس الثالث بأسطول بحري ضخم وفاجأ أسطول العدو<br><br>
+                <strong>نتائجها:</strong><br>
+                1️⃣ هزيمة شعوب البحر المتوسط وتحطيم أسطولهم أمام شواطئ الدلتا وإنقاذ مصر من خطرهم<br>
+                2️⃣ استعادة السيطرة على الحدود الشمالية للبلاد
+            </div>
+        </div>
+    </div>
+
+    <!-- 8- الشرطة -->
+    <div class="section" data-section>
+        <div class="section-header">
+            <span class="section-number">8</span>
+            <span class="section-icon">🛡️</span>
+            <h2 class="section-title">الشرطة</h2>
+        </div>
+
+        <div class="definition-card">
+            <div class="def-title">📌 الشرطة</div>
+            <div class="def-text">هيئة مدنية نظامية في خدمة الشعب، وتكفل للمواطنين الطمأنينة والأمن وتسهر على حفظ النظام العام وتلتزم بما يفرضه عليها الدستور والقانون من واجبات واحترام الحقوق الإنسان وحرياته الأساسية.</div>
+        </div>
+
+        <h3 class="sub-header">في عصر الدولة الحديثة</h3>
+        <p>ظهرت الشرطة <span class="highlight">ككيان مستقل عن الجيش</span>، وكان لرجال الشرطة مكانتهم الخاصة بين أفراد الشعب.</p>
+
+        <h3 class="sub-header">مهامها</h3>
+        <ul class="content-list">
+            <li><span class="list-icon">🔒</span> حفظ النظام وإقرار الأمن</li>
+            <li><span class="list-icon">⚖️</span> إجبار الأفراد على احترام سلطة الدولة</li>
+        </ul>
+
+        <h3 class="sub-header">أجهزتها</h3>
+        <div class="stat-cards">
+            <div class="stat-card"><span class="stat-icon">🏘️</span><span class="stat-label">الشرطة المحلية</span></div>
+            <div class="stat-card"><span class="stat-icon">🔐</span><span class="stat-label">الشرطة الخاصة</span></div>
+            <div class="stat-card"><span class="stat-icon">🌊</span><span class="stat-label">الشرطة النهرية</span></div>
+            <div class="stat-card"><span class="stat-icon">🏛️</span><span class="stat-label">شرطة المعابد</span></div>
+            <div class="stat-card"><span class="stat-icon">👑</span><span class="stat-label">الحرس الملكي</span></div>
+        </div>
+
+        <div class="quote-card">
+            «اتخذ من شرطي شارعك صديقاً لك، ولا تجعله يثور عليك»
+            <span class="quote-source">— من كلمات الحكيم آني</span>
+        </div>
+    </div>
+
+    <!-- أسئلة القضاء والجيش والأسطول والشرطة -->
+    <div class="quiz-section" data-section>
+        <div class="quiz-header">
+            <span style="font-size:30px">🎯</span>
+            <h3>أسئلة على القضاء والجيش والأسطول والشرطة</h3>
+        </div>
+
+        <div class="question" id="q21">
+            <div class="question-text"><span class="question-number">1</span> ظهرت بواكير الجيش النظامي في مصر في عهد:</div>
+            <div class="options">
+                <button class="option-btn" onclick="checkAnswer(this, 'q21', true)"><span class="option-letter">أ</span> الملك بيبي الأول</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q21', false)"><span class="option-letter">ب</span> الملك أحمس</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q21', false)"><span class="option-letter">ج</span> الملك تحتمس الثالث</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q21', false)"><span class="option-letter">د</span> الملك رمسيس الثالث</button>
+            </div>
+            <div class="feedback" id="feedback-q21"></div>
+        </div>
+
+        <div class="question" id="q22">
+            <div class="question-text"><span class="question-number">2</span> قاد معركة التحرير 1571 ق.م ضد الهكسوس:</div>
+            <div class="options">
+                <button class="option-btn" onclick="checkAnswer(this, 'q22', true)"><span class="option-letter">أ</span> أحمس أمير طيبة</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q22', false)"><span class="option-letter">ب</span> تحتمس الثالث</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q22', false)"><span class="option-letter">ج</span> رمسيس الثالث</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q22', false)"><span class="option-letter">د</span> سنفرو</button>
+            </div>
+            <div class="feedback" id="feedback-q22"></div>
+        </div>
+
+        <div class="question" id="q23">
+            <div class="question-text"><span class="question-number">3</span> يُعتبر العصر الذهبي للبحرية المصرية هو عصر:</div>
+            <div class="options">
+                <button class="option-btn" onclick="checkAnswer(this, 'q23', false)"><span class="option-letter">أ</span> الدولة القديمة</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q23', false)"><span class="option-letter">ب</span> الدولة الوسطى</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q23', true)"><span class="option-letter">ج</span> الدولة الحديثة</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q23', false)"><span class="option-letter">د</span> عصر الأسرات الأولى</button>
+            </div>
+            <div class="feedback" id="feedback-q23"></div>
+        </div>
+
+        <div class="question" id="q24">
+            <div class="question-text"><span class="question-number">4</span> صح أم خطأ: ظهرت الشرطة ككيان مستقل عن الجيش في عصر الدولة الحديثة.</div>
+            <div class="tf-options">
+                <button class="tf-btn" onclick="checkTF(this, 'q24', true)">✅ صح</button>
+                <button class="tf-btn" onclick="checkTF(this, 'q24', false)">❌ خطأ</button>
+            </div>
+            <div class="feedback" id="feedback-q24"></div>
+        </div>
+
+        <div class="question" id="q25">
+            <div class="question-text"><span class="question-number">5</span> من نتائج معركة مجدو 1479 ق.م:</div>
+            <div class="options">
+                <button class="option-btn" onclick="checkAnswer(this, 'q25', false)"><span class="option-letter">أ</span> طرد الهكسوس من مصر</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q25', true)"><span class="option-letter">ب</span> تأمين حدود مصر الشمالية الشرقية</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q25', false)"><span class="option-letter">ج</span> تحطيم أسطول شعوب البحر المتوسط</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q25', false)"><span class="option-letter">د</span> تحول الحكم لملكية مقيدة</button>
+            </div>
+            <div class="feedback" id="feedback-q25"></div>
+        </div>
+    </div>
+
+    <!-- التواصل مع أفريقيا -->
+    <div class="section" data-section>
+        <div class="section-header">
+            <span class="section-icon">🌍</span>
+            <h2 class="section-title">التواصل السياسي والعسكري المصري مع أفريقيا</h2>
+        </div>
+
+        <p>بدأ اهتمام المصريين بمنطقة <span class="highlight">النوبة "شمال السودان"</span> والتي كانت جزءاً من الحدود الجنوبية المصرية منذ أقدم العصور، وذلك بغرض:</p>
+        <ul class="content-list numbered-list">
+            <li>تأمين حدود مصر الجنوبية من غارات البدو المتلاحقة</li>
+            <li>إقامة علاقات تجارية مع شعوب المنطقة</li>
+        </ul>
+
+        <div class="definition-card">
+            <div class="def-title">📌 النوبة في العصر الفرعوني</div>
+            <div class="def-text">
+                انقسمت النوبة إلى جزأين:<br>
+                <strong>الجزء الأول:</strong> مصري داخل الحدود المصرية<br>
+                <strong>الجزء الثاني:</strong> في السودان
+            </div>
+        </div>
+
+        <h3 class="sub-header">التواصل السياسي والعسكري</h3>
+        <ul class="content-list numbered-list">
+            <li>قام المصريون القدماء بالعديد من الحملات العسكرية إلى منطقة النوبة "شمال السودان" وإنشاء العديد من القلاع والحصون الحربية لتأمين الحدود</li>
+            <li>قام الملك <span class="highlight">سنوسرت الأول</span> بتقسيم النوبة "شمال السودان" إلى أقاليم إدارية شبيهة بالتقسيم المصري كما عين حاكماً عليها</li>
+            <li>عمل أفراد في النوبة في الجيش المصري في إمارة طيبة</li>
+        </ul>
+
+        <div class="info-card">
+            <div class="info-title">📌 النوبة أرض الأمجاد</div>
+            <p>أطلق المصريون القدماء على أرض النوبة اسم <span class="highlight-2">"تاستي"</span>، وعلى سكانها اسم <span class="highlight-2">"تاستيو"</span> بمعنى <strong>أرض أهل الأقواس</strong> لأنهم امتازوا بمهارة استعمالهم للأقواس والسهام واشتركوا كجنود في الجيش المصري لمحاربة الأعداء والدفاع عن الوطن.</p>
+        </div>
+    </div>
+
+    <!-- أسئلة التواصل مع أفريقيا -->
+    <div class="quiz-section" data-section>
+        <div class="quiz-header">
+            <span style="font-size:30px">🎯</span>
+            <h3>أسئلة على التواصل مع أفريقيا</h3>
+        </div>
+
+        <div class="question" id="q26">
+            <div class="question-text"><span class="question-number">1</span> أطلق المصريون القدماء على سكان النوبة اسم "تاستيو" بمعنى:</div>
+            <div class="options">
+                <button class="option-btn" onclick="checkAnswer(this, 'q26', false)"><span class="option-letter">أ</span> أرض الذهب</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q26', true)"><span class="option-letter">ب</span> أرض أهل الأقواس</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q26', false)"><span class="option-letter">ج</span> أرض الأمجاد</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q26', false)"><span class="option-letter">د</span> أرض الحضارة</button>
+            </div>
+            <div class="feedback" id="feedback-q26"></div>
+        </div>
+
+        <div class="question" id="q27">
+            <div class="question-text"><span class="question-number">2</span> قام بتقسيم النوبة إلى أقاليم إدارية:</div>
+            <div class="options">
+                <button class="option-btn" onclick="checkAnswer(this, 'q27', true)"><span class="option-letter">أ</span> الملك سنوسرت الأول</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q27', false)"><span class="option-letter">ب</span> الملك سنوسرت الثالث</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q27', false)"><span class="option-letter">ج</span> الملك أحمس</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q27', false)"><span class="option-letter">د</span> الملك تحتمس الثالث</button>
+            </div>
+            <div class="feedback" id="feedback-q27"></div>
+        </div>
+
+        <div class="question" id="q28">
+            <div class="question-text"><span class="question-number">3</span> صح أم خطأ: اهتم المصريون بالنوبة لتأمين الحدود الجنوبية وإقامة علاقات تجارية.</div>
+            <div class="tf-options">
+                <button class="tf-btn" onclick="checkTF(this, 'q28', true)">✅ صح</button>
+                <button class="tf-btn" onclick="checkTF(this, 'q28', false)">❌ خطأ</button>
+            </div>
+            <div class="feedback" id="feedback-q28"></div>
+        </div>
+
+        <div class="question" id="q29">
+            <div class="question-text"><span class="question-number">4</span> أرسل أسطولاً بحرياً إلى فينيقيا لجلب خشب الأرز:</div>
+            <div class="options">
+                <button class="option-btn" onclick="checkAnswer(this, 'q29', true)"><span class="option-letter">أ</span> الملك سنفرو</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q29', false)"><span class="option-letter">ب</span> الملك رمسيس الثالث</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q29', false)"><span class="option-letter">ج</span> الملك أحمس</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q29', false)"><span class="option-letter">د</span> الملك تحتمس الثالث</button>
+            </div>
+            <div class="feedback" id="feedback-q29"></div>
+        </div>
+
+        <div class="question" id="q30">
+            <div class="question-text"><span class="question-number">5</span> صح أم خطأ: احتل الهكسوس مصر عام 1571 ق.م.</div>
+            <div class="tf-options">
+                <button class="tf-btn" onclick="checkTF(this, 'q30', false)">✅ صح</button>
+                <button class="tf-btn" onclick="checkTF(this, 'q30', true)">❌ خطأ</button>
+            </div>
+            <div class="feedback" id="feedback-q30"></div>
+        </div>
+    </div>
+
+    <!-- الاختبار النهائي الشامل -->
+    <div class="section final-exam" data-section>
+        <div class="quiz-header">
+            <span style="font-size:35px">🏆</span>
+            <h3 style="font-size:1.6em; color:var(--accent-4);">الاختبار النهائي الشامل</h3>
+        </div>
+
+        <div id="final-quiz-container">
+            <div class="question" id="fq1">
+                <div class="question-text"><span class="question-number">1</span> تم توحيد مصر على يد الملك نعرمر (مينا) عام:</div>
+                <div class="options">
+                    <button class="option-btn" onclick="checkFinal(this, 'fq1', false)"><span class="option-letter">أ</span> 4242 ق.م</button>
+                    <button class="option-btn" onclick="checkFinal(this, 'fq1', true)"><span class="option-letter">ب</span> 3200 ق.م</button>
+                    <button class="option-btn" onclick="checkFinal(this, 'fq1', false)"><span class="option-letter">ج</span> 1571 ق.م</button>
+                    <button class="option-btn" onclick="checkFinal(this, 'fq1', false)"><span class="option-letter">د</span> 1730 ق.م</button>
+                </div>
+                <div class="feedback" id="feedback-fq1"></div>
+            </div>
+
+            <div class="question" id="fq2">
+                <div class="question-text"><span class="question-number">2</span> ظهر مبدأ عدم الفصل بين السلطات في مصر الفرعونية خلال اختصاصات كل من:</div>
+                <div class="options">
+                    <button class="option-btn" onclick="checkFinal(this, 'fq2', true)"><span class="option-letter">أ</span> الملك ورئيس الإدارة المركزية</button>
+                    <button class="option-btn" onclick="checkFinal(this, 'fq2', false)"><span class="option-letter">ب</span> الوزير وكاتمو أسرار الملك</button>
+                    <button class="option-btn" onclick="checkFinal(this, 'fq2', false)"><span class="option-letter">ج</span> كاتمو أسرار الملك وقادة الجيش</button>
+                    <button class="option-btn" onclick="checkFinal(this, 'fq2', false)"><span class="option-letter">د</span> قادة الجيش ومجلس العشرة الكبار</button>
+                </div>
+                <div class="feedback" id="feedback-fq2"></div>
+            </div>
+
+            <div class="question" id="fq3">
+                <div class="question-text"><span class="question-number">3</span> من خطاب الملك إلى وزيره «عامل من تعرفه معاملة من لا تعرفه»، نستنتج حرص الملوك على:</div>
+                <div class="options">
+                    <button class="option-btn" onclick="checkFinal(this, 'fq3', false)"><span class="option-letter">أ</span> تكليف الوزراء بمهام محددة</button>
+                    <button class="option-btn" onclick="checkFinal(this, 'fq3', false)"><span class="option-letter">ب</span> الفصل بين السلطات</button>
+                    <button class="option-btn" onclick="checkFinal(this, 'fq3', true)"><span class="option-letter">ج</span> تحقيق العدالة والاستقرار</button>
+                    <button class="option-btn" onclick="checkFinal(this, 'fq3', false)"><span class="option-letter">د</span> الحفاظ على وحدة البلاد</button>
+                </div>
+                <div class="feedback" id="feedback-fq3"></div>
+            </div>
+
+            <div class="question" id="fq4">
+                <div class="question-text"><span class="question-number">4</span> صح أم خطأ: كان المصري القديم يميل للحرب والغزو.</div>
+                <div class="tf-options">
+                    <button class="tf-btn" onclick="checkFinalTF(this, 'fq4', false)">✅ صح</button>
+                    <button class="tf-btn" onclick="checkFinalTF(this, 'fq4', true)">❌ خطأ</button>
+                </div>
+                <div class="feedback" id="feedback-fq4"></div>
+            </div>
+
+            <div class="question" id="fq5">
+                <div class="question-text"><span class="question-number">5</span> أي الاختصاصات التالية خلا منها منصب الوزير في مصر الفرعونية؟</div>
+                <div class="options">
+                    <button class="option-btn" onclick="checkFinal(this, 'fq5', false)"><span class="option-letter">أ</span> السلطة التنفيذية</button>
+                    <button class="option-btn" onclick="checkFinal(this, 'fq5', false)"><span class="option-letter">ب</span> الفصل في القضايا</button>
+                    <button class="option-btn" onclick="checkFinal(this, 'fq5', false)"><span class="option-letter">ج</span> السلطة التشريعية</button>
+                    <button class="option-btn" onclick="checkFinal(this, 'fq5', true)"><span class="option-letter">د</span> عقد المعاهدات السياسية</button>
+                </div>
+                <div class="feedback" id="feedback-fq5"></div>
+            </div>
+
+            <div class="question" id="fq6">
+                <div class="question-text"><span class="question-number">6</span> في ضوء العبارة «كانت الوظائف الكتابية أحسن وسيلة يضمن بها الشاب تحقيق مستقبل مشرق» - أي الوظائف كان من الصعب الوصول إليها في عصر الدولة القديمة؟</div>
+                <div class="options">
+                    <button class="option-btn" onclick="checkFinal(this, 'fq6', false)"><span class="option-letter">أ</span> رئيس الإدارة المركزية</button>
+                    <button class="option-btn" onclick="checkFinal(this, 'fq6', false)"><span class="option-letter">ب</span> حاكم أحد الإدارات المحلية</button>
+                    <button class="option-btn" onclick="checkFinal(this, 'fq6', false)"><span class="option-letter">ج</span> رئيس ديوان المحفوظات</button>
+                    <button class="option-btn" onclick="checkFinal(this, 'fq6', true)"><span class="option-letter">د</span> كاتمو أسرار الملك</button>
+                </div>
+                <div class="feedback" id="feedback-fq6"></div>
+            </div>
+
+            <div class="question" id="fq7">
+                <div class="question-text"><span class="question-number">7</span> وقعت معركة مجدو عام:</div>
+                <div class="options">
+                    <button class="option-btn" onclick="checkFinal(this, 'fq7', false)"><span class="option-letter">أ</span> 1571 ق.م</button>
+                    <button class="option-btn" onclick="checkFinal(this, 'fq7', true)"><span class="option-letter">ب</span> 1479 ق.م</button>
+                    <button class="option-btn" onclick="checkFinal(this, 'fq7', false)"><span class="option-letter">ج</span> 1730 ق.م</button>
+                    <button class="option-btn" onclick="checkFinal(this, 'fq7', false)"><span class="option-letter">د</span> 3200 ق.م</button>
+                </div>
+                <div class="feedback" id="feedback-fq7"></div>
+            </div>
+
+            <div class="question" id="fq8">
+                <div class="question-text"><span class="question-number">8</span> صح أم خطأ: قام الملك سنوسرت الأول بإلغاء توريث منصب حاكم الإقليم.</div>
+                <div class="tf-options">
+                    <button class="tf-btn" onclick="checkFinalTF(this, 'fq8', false)">✅ صح</button>
+                    <button class="tf-btn" onclick="checkFinalTF(this, 'fq8', true)">❌ خطأ</button>
+                </div>
+                <div class="feedback" id="feedback-fq8"></div>
+            </div>
+
+            <div class="question" id="fq9">
+                <div class="question-text"><span class="question-number">9</span> من نصائح فرعون للوزير رخميرع «ليكن غضبك لما يستوجب الغضب» تؤكد على ضرورة أن يتحلى الوزير بـ:</div>
+                <div class="options">
+                    <button class="option-btn" onclick="checkFinal(this, 'fq9', false)"><span class="option-letter">أ</span> العدل</button>
+                    <button class="option-btn" onclick="checkFinal(this, 'fq9', false)"><span class="option-letter">ب</span> الرحمة</button>
+                    <button class="option-btn" onclick="checkFinal(this, 'fq9', true)"><span class="option-letter">ج</span> الحكمة</button>
+                    <button class="option-btn" onclick="checkFinal(this, 'fq9', false)"><span class="option-letter">د</span> القوة</button>
+                </div>
+                <div class="feedback" id="feedback-fq9"></div>
+            </div>
+
+            <div class="question" id="fq10">
+                <div class="question-text"><span class="question-number">10</span> شارك الوزير في بعض مهام مصر الفرعونية وظهر ذلك من خلال:</div>
+                <div class="options">
+                    <button class="option-btn" onclick="checkFinal(this, 'fq10', false)"><span class="option-letter">أ</span> رئاسة الإدارة المركزية</button>
+                    <button class="option-btn" onclick="checkFinal(this, 'fq10', true)"><span class="option-letter">ب</span> امتلاك سلطات تشريعية</button>
+                    <button class="option-btn" onclick="checkFinal(this, 'fq10', false)"><span class="option-letter">ج</span> عقد المعاهدات الخارجية</button>
+                    <button class="option-btn" onclick="checkFinal(this, 'fq10', false)"><span class="option-letter">د</span> اتخاذ قرار إعلان الحرب</button>
+                </div>
+                <div class="feedback" id="feedback-fq10"></div>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div class="results-container" id="final-results">
+            <div class="results-circle" id="results-circle">
+                <span class="percentage" id="results-percentage">0%</span>
+                <span class="label">النتيجة</span>
+            </div>
+            <div class="results-message" id="results-message"></div>
+            <div class="results-details" id="results-details"></div>
+            <button class="reset-btn" onclick="resetFinalExam()">🔄 إعادة الاختبار</button>
+        </div>
+    </div>
+
+</div>
+
+<script>
+// =========== Variables ===========
+let score = 0;
+let totalAnswered = 0;
+const allQuestions = document.querySelectorAll('.question');
+let totalQuestions = allQuestions.length;
+document.getElementById('total-questions').textContent = totalQuestions;
+
+let finalScore = 0;
+let finalAnswered = 0;
+const finalTotalQuestions = 10;
+
+// =========== Theme ===========
+function toggleTheme() {
+    const body = document.body;
+    const icon = document.getElementById('theme-icon');
+    const tooltip = document.getElementById('theme-tooltip');
+
+    if (body.classList.contains('dark-mode')) {
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
+        icon.textContent = '☀️';
+        tooltip.textContent = 'التبديل للوضع الليلي';
+        localStorage.setItem('theme', 'light');
+        showNotification('☀️ تم تفعيل الوضع النهاري');
+    } else {
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+        icon.textContent = '🌙';
+        tooltip.textContent = 'التبديل للوضع النهاري';
+        localStorage.setItem('theme', 'dark');
+        showNotification('🌙 تم تفعيل الوضع الليلي');
+    }
+}
+
+// Load saved theme
+(function() {
+    const saved = localStorage.getItem('theme');
+    const body = document.body;
+    const icon = document.getElementById('theme-icon');
+    const tooltip = document.getElementById('theme-tooltip');
+    if (saved === 'light') {
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
+        icon.textContent = '☀️';
+        tooltip.textContent = 'التبديل للوضع الليلي';
+    }
+})();
+
+// =========== Notification ===========
+function showNotification(msg) {
+    const n = document.getElementById('notification');
+    n.textContent = msg;
+    n.classList.add('show');
+    setTimeout(() => n.classList.remove('show'), 2500);
+}
+
+// =========== Progress Bar ===========
+window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const scroll = h.scrollTop;
+    const maxScroll = h.scrollHeight - h.clientHeight;
+    const pct = (scroll / maxScroll) * 100;
+    document.getElementById('progress-bar').style.width = pct + '%';
+
+    // Scroll to top button
+    const btn = document.getElementById('scroll-top');
+    btn.style.display = scroll > 400 ? 'flex' : 'none';
+});
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// =========== Fade In Sections ===========
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+        if (e.isIntersecting) {
+            e.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.section, .quiz-section').forEach(s => observer.observe(s));
+
+// =========== Particles ===========
+(function createParticles() {
+    const container = document.getElementById('particles-container');
+    const colors = ['#00d4aa', '#7c4dff', '#ff6b6b', '#ffd93d', '#6bcfff'];
+    for (let i = 0; i < 30; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        const size = Math.random() * 6 + 2;
+        p.style.width = size + 'px';
+        p.style.height = size + 'px';
+        p.style.left = Math.random() * 100 + '%';
+        p.style.background = colors[Math.floor(Math.random() * colors.length)];
+        p.style.animationDuration = (Math.random() * 15 + 10) + 's';
+        p.style.animationDelay = (Math.random() * 10) + 's';
+        container.appendChild(p);
+    }
+})();
+
+// =========== Quiz Functions ===========
+function checkAnswer(btn, qId, isCorrect) {
+    const question = document.getElementById(qId);
+    if (question.classList.contains('answered-correct') || question.classList.contains('answered-wrong')) return;
+
+    const buttons = question.querySelectorAll('.option-btn');
+    const feedback = document.getElementById('feedback-' + qId);
+
+    buttons.forEach(b => b.classList.add('disabled'));
+
+    if (isCorrect) {
+        btn.classList.add('correct');
+        question.classList.add('answered-correct');
+        feedback.className = 'feedback correct-feedback';
+        feedback.textContent = '✅ إجابة صحيحة! أحسنت!';
+        score++;
+    } else {
+        btn.classList.add('wrong');
+        question.classList.add('answered-wrong');
+        // Show correct answer
+        buttons.forEach(b => {
+            if (b.onclick.toString().includes('true')) {
+                b.classList.add('correct');
+            }
+        });
+        feedback.className = 'feedback wrong-feedback';
+        const correctBtn = Array.from(buttons).find(b => b.onclick.toString().includes('true'));
+        const correctText = correctBtn ? correctBtn.textContent.trim() : '';
+        feedback.textContent = '❌ إجابة خاطئة! الإجابة الصحيحة: ' + correctText;
+    }
+
+    totalAnswered++;
+    document.getElementById('score').textContent = score;
+}
+
+function checkTF(btn, qId, isCorrect) {
+    const question = document.getElementById(qId);
+    if (question.classList.contains('answered-correct') || question.classList.contains('answered-wrong')) return;
+
+    const buttons = question.querySelectorAll('.tf-btn');
+    const feedback = document.getElementById('feedback-' + qId);
+
+    buttons.forEach(b => b.classList.add('disabled'));
+
+    if (isCorrect) {
+        btn.classList.add('correct');
+        question.classList.add('answered-correct');
+        feedback.className = 'feedback correct-feedback';
+        feedback.textContent = '✅ إجابة صحيحة! أحسنت!';
+        score++;
+    } else {
+        btn.classList.add('wrong');
+        question.classList.add('answered-wrong');
+        buttons.forEach(b => {
+            if (b.onclick.toString().includes('true')) b.classList.add('correct');
+        });
+        feedback.className = 'feedback wrong-feedback';
+        feedback.textContent = '❌ إجابة خاطئة! الإجابة الصحيحة هي العكس.';
+    }
+
+    totalAnswered++;
+    document.getElementById('score').textContent = score;
+}
+
+// =========== Final Exam ===========
+function checkFinal(btn, qId, isCorrect) {
+    const question = document.getElementById(qId);
+    if (question.classList.contains('answered-correct') || question.classList.contains('answered-wrong')) return;
+
+    const buttons = question.querySelectorAll('.option-btn');
+    const feedback = document.getElementById('feedback-' + qId);
+
+    buttons.forEach(b => b.classList.add('disabled'));
+
+    if (isCorrect) {
+        btn.classList.add('correct');
+        question.classList.add('answered-correct');
+        feedback.className = 'feedback correct-feedback';
+        feedback.textContent = '✅ إجابة صحيحة! أحسنت!';
+        score++;
+        finalScore++;
+    } else {
+        btn.classList.add('wrong');
+        question.classList.add('answered-wrong');
+        buttons.forEach(b => {
+            if (b.onclick.toString().includes('true')) b.classList.add('correct');
+        });
+        feedback.className = 'feedback wrong-feedback';
+        const correctBtn = Array.from(buttons).find(b => b.onclick.toString().includes('true'));
+        const correctText = correctBtn ? correctBtn.textContent.trim() : '';
+        feedback.textContent = '❌ إجابة خاطئة! الإجابة الصحيحة: ' + correctText;
+    }
+
+    totalAnswered++;
+    finalAnswered++;
+    document.getElementById('score').textContent = score;
+
+    if (finalAnswered === finalTotalQuestions) {
+        setTimeout(showResults, 800);
+    }
+}
+
+function checkFinalTF(btn, qId, isCorrect) {
+    const question = document.getElementById(qId);
+    if (question.classList.contains('answered-correct') || question.classList.contains('answered-wrong')) return;
+
+    const buttons = question.querySelectorAll('.tf-btn');
+    const feedback = document.getElementById('feedback-' + qId);
+
+    buttons.forEach(b => b.classList.add('disabled'));
+
+    if (isCorrect) {
+        btn.classList.add('correct');
+        question.classList.add('answered-correct');
+        feedback.className = 'feedback correct-feedback';
+        feedback.textContent = '✅ إجابة صحيحة! أحسنت!';
+        score++;
+        finalScore++;
+    } else {
+        btn.classList.add('wrong');
+        question.classList.add('answered-wrong');
+        buttons.forEach(b => {
+            if (b.onclick.toString().includes('true')) b.classList.add('correct');
+        });
+        feedback.className = 'feedback wrong-feedback';
+        feedback.textContent = '❌ إجابة خاطئة! الإجابة الصحيحة هي العكس.';
+    }
+
+    totalAnswered++;
+    finalAnswered++;
+    document.getElementById('score').textContent = score;
+
+    if (finalAnswered === finalTotalQuestions) {
+        setTimeout(showResults, 800);
+    }
+}
+
+function showResults() {
+    const pct = Math.round((finalScore / finalTotalQuestions) * 100);
+    document.getElementById('results-percentage').textContent = pct + '%';
+
+    const circle = document.getElementById('results-circle');
+    if (pct >= 80) circle.style.borderColor = '#00d4aa';
+    else if (pct >= 60) circle.style.borderColor = '#7c4dff';
+    else if (pct >= 40) circle.style.borderColor = '#ffd93d';
+    else circle.style.borderColor = '#ff6b6b';
+
+    let msg = '', emoji = '';
+    if (pct >= 90) { msg = 'ممتاز! أداء رائع! 🌟'; emoji = '🏆'; }
+    else if (pct >= 75) { msg = 'جيد جدًا! استمر! 💪'; emoji = '🥈'; }
+    else if (pct >= 50) { msg = 'جيد! تحتاج مراجعة بسيطة 📖'; emoji = '🥉'; }
+    else { msg = 'يحتاج مراجعة! لا تستسلم! 📚'; emoji = '💪'; }
+
+    document.getElementById('results-message').textContent = emoji + ' ' + msg;
+    document.getElementById('results-details').textContent = `حصلت على ${finalScore} من ${finalTotalQuestions} أسئلة`;
+
+    document.getElementById('final-results').style.display = 'block';
+    document.getElementById('final-results').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function resetFinalExam() {
+    finalScore = 0;
+    finalAnswered = 0;
+
+    // Reset final exam questions
+    for (let i = 1; i <= 10; i++) {
+        const q = document.getElementById('fq' + i);
+        if (q) {
+            q.classList.remove('answered-correct', 'answered-wrong');
+            const btns = q.querySelectorAll('.option-btn, .tf-btn');
+            btns.forEach(b => {
+                b.classList.remove('correct', 'wrong', 'disabled');
+            });
+            const fb = document.getElementById('feedback-fq' + i);
+            if (fb) {
+                fb.className = 'feedback';
+                fb.textContent = '';
+            }
+        }
+    }
+
+    // Recalculate score (remove final exam score from total)
+    score = 0;
+    totalAnswered = 0;
+    // Recount section quizzes
+    for (let i = 1; i <= 30; i++) {
+        const q = document.getElementById('q' + i);
+        if (q) {
+            if (q.classList.contains('answered-correct')) {
+                score++;
+                totalAnswered++;
+            } else if (q.classList.contains('answered-wrong')) {
+                totalAnswered++;
+            }
+        }
+    }
+    document.getElementById('score').textContent = score;
+    document.getElementById('final-results').style.display = 'none';
+
+    document.getElementById('final-quiz-container').scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
